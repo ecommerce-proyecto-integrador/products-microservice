@@ -12,7 +12,7 @@ type Product struct {
 	SizeAvailable string         `gorm:"not null" json:"sizeAvailable"`
 	Images        []ProductImage `gorm:"foreignKey:ProductID" json:"images"`
 	Reviews       string         `gorm:"not null" json:"reviews"`
-
+	Stock         int            `gorm:"not null" json:"stock"`
 	// Agrega un campo que represente la relación con la categoría
 	CategoryName string `gorm:"foreignKey:Name" json:"Category"` // Puedes usar uint o el tipo de dato que sea adecuado
 	Category     Category

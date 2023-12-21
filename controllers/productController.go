@@ -16,7 +16,7 @@ func GetProducts() ([]models.Product, error) {
 
 func GetProductById(Productid string) (models.Product, error) {
 	var product models.Product
-	err := db.DB.Preload("Images").Select("id, name, description, price, brand, in_stock, size_available, reviews, category_name").Where("id = ?", Productid).First(&product).Error
+	err := db.DB.Preload("Images").Select("id, name, description, price, brand, in_stock, size_available, reviews, category_name, stock").Where("id = ?", Productid).First(&product).Error
 	log.Println(product)
 	return product, err
 }
